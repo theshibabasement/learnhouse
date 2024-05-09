@@ -9,10 +9,8 @@ services:
     env_file:
       - ./extra/example-learnhouse-conf.env
     depends_on:
-      db:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
+      - db
+      - redis
   collaboration:
     build: apps/collaboration/.
     ports:
